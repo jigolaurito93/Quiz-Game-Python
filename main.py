@@ -4,6 +4,8 @@ from quiz_brain import QuizBrain
 
 question_bank = []
 
+continue_game = True
+
 
 
 for question in question_data:
@@ -16,4 +18,6 @@ for question in question_data:
 
 quiz = QuizBrain(question_bank)
 
-quiz.next_question()
+while continue_game:
+    if not quiz.next_question():
+        continue_game = False
