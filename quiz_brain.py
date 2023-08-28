@@ -26,25 +26,17 @@ class QuizBrain():
         
         
         
-    
+    # Checks the answer if its correct, if it is, increment the score to 1, if not, print error
     def check_answer(self, user_answer, correct_answer):
         if user_answer == correct_answer:
-            print('Youre right')
+            print('You got it right!')
             self.current_score  += 1
         else: 
-            print("Youre wrong")
+            print("You're wrong")
         
         print(f"The correct answer was: {correct_answer}.")
         print(f"Your current score is: {self.current_score}/{self.question_number}.")
         print("\n")
-            
-        
-        # self.current_score += 1
-        # print("You got it right!")
-        # print(f"The correct answer was: {correct_answer}.")
-        # print(f"Your current score is: {self.current_score}/{self.question_number}.\n\n")
-        # return True
-
-
+    
         
        
