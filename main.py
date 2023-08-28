@@ -4,10 +4,6 @@ from quiz_brain import QuizBrain
 
 question_bank = []
 
-continue_game = True
-
-
-
 for question in question_data:
     question_text = question["text"]
     question_answer = question["answer"]
@@ -18,6 +14,9 @@ for question in question_data:
 
 quiz = QuizBrain(question_bank)
 
-while continue_game:
-    if not quiz.next_question():
-        continue_game = False
+
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print("You have completed the quiz")
+print(f"Your final score was: {quiz.current_score}/{quiz.question_number}")
